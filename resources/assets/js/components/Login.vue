@@ -37,12 +37,12 @@
                 </div>
                 <div class="row">
                     <div class="input-field">
-                        <input type="password" class="validate pass" v-show="!visibPass" v-model="login.password">
-                        <input type="text" class="validate pass" v-show="visibPass" v-model="login.password">
+                        <input type="password" class="validate pass" ref="passPass" v-show="!visibPass" v-model="login.password">
+                        <input type="text" class="validate pass" ref="passText" v-show="visibPass" v-model="login.password">
                         <label for="password">Senha</label>
                         <div class="show-pass">
-                          <i class="material-icons prefix icon-visib" v-show="!visibPass" v-on:click="visibPass = true">visibility</i>
-                          <i class="material-icons prefix icon-visib" v-show="visibPass" v-on:click="visibPass = false">visibility_off</i>
+                          <i class="material-icons prefix icon-visib" v-show="!visibPass" v-on:click="tooglePass(true)">visibility</i>
+                          <i class="material-icons prefix icon-visib" v-show="visibPass" v-on:click="tooglePass(false)">visibility_off</i>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,6 @@
 
 
 <script>
-
     export default {
         mounted() {
 
@@ -80,7 +79,20 @@
             }
         },
         methods: {
+          tooglePass(status) {
 
+            this.visibPass = status;
+
+             var el = this.$refs.passText;
+             if(!status){
+                  el = this.$refs.passPass;
+             }
+
+            setTimeout(function(){
+                $(el).focus();
+            }, 100)
+
+          }
         }
     }
 </script>

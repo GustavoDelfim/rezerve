@@ -1,16 +1,21 @@
 <style scoped>
-    .content {
+  .banner {
+     width: 100%;
+     min-height: 100vh;
+     background: #de8d8d;
+  }
+   .content {
       width: 100%;
       float: left;
-        padding: 120px 60px 0;
-    }
-    .content .logo {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    .content .logo img {
-        max-width: 170px;
-    }
+      padding: 120px 60px 0;
+   }
+   .content .logo {
+      text-align: center;
+      margin-bottom: 40px;
+   }
+   .content .logo img {
+      max-width: 170px;
+   }
 </style>
 
 
