@@ -1,0 +1,17 @@
+
+
+
+
+@mixin clear-both {
+  width: 100%;
+  float: left;
+  clear: both;
+}
+
+@mixin transition-all($sec...){
+  -webkit-transition: all $sec ease;
+  -moz-transition: all $sec ease;
+  -ms-transition: all $sec ease;
+  -o-transition: all $sec ease;
+  transition: all $sec ease;
+}

@@ -1,0 +1,82 @@
+
+
+#header {
+  @include clear-both;
+  min-height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+#header .background {
+  @include clear-both;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    background: #fff;
+    min-height: 100%;
+    @include transition-all(.2s)
+  }
+#header.active .background {
+  top: 0;
+}
+
+#header .logo {
+  width: 130px;
+  float: left;
+  position: relative;
+  margin-top: 21px;
+  z-index: 1;
+}
+#header .logo img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#header .logo img.logo-black {
+  display: none;
+}
+#header.active .logo img.logo-black {
+  display: block;
+}
+
+#header .menu {
+  padding: 0;
+  float: right;
+  margin-bottom: 0;
+  margin-top: 0;
+  position: relative;
+  z-index: 2;
+}
+#header .menu li {
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+#header .menu li a {
+  padding: 0 10px;
+  min-height: 80px;
+  float: left;
+  color: #fff;
+  text-decoration: none;
+  line-height: 80px;
+  @include transition-all(.2s)
+}
+
+#header .menu li a:hover {
+  color: #333;
+}
+
+#header.active .menu li a {
+  color: #333;
+}
+#header.active .menu li a:hover {
+  color: #50c5bc;
+}
+
+#banner {
+  @include clear-both;
+  height: 750px;
+  background: #50c5bc;
+}
