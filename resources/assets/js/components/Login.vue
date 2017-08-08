@@ -39,7 +39,7 @@
                     <div class="input-field">
                         <input type="password" class="validate pass" ref="passPass" v-show="!visibPass" v-model="login.password">
                         <input type="text" class="validate pass" ref="passText" v-show="visibPass" v-model="login.password">
-                        <label for="password">Senha</label>
+                        <label>Senha</label>
                         <div class="show-pass">
                           <i class="material-icons prefix icon-visib" v-show="!visibPass" v-on:click="tooglePass(true)">visibility</i>
                           <i class="material-icons prefix icon-visib" v-show="visibPass" v-on:click="tooglePass(false)">visibility_off</i>
@@ -65,6 +65,8 @@
 
 
 <script>
+    import Auth from './Auth.vue';
+
     export default {
         mounted() {
 
@@ -73,10 +75,14 @@
             return {
                 visibPass: false,
                 login: {
-                  email: "",
-                  password: ""
+                    email: null,
+                    password: null,
+                    error: false
                 }
             }
+        },
+        components: {
+            Auth
         },
         methods: {
           tooglePass(status) {
@@ -92,6 +98,11 @@
                 $(el).focus();
             }, 100)
 
+
+          },
+          signin(event) {
+            event.preventDefault()
+              Auth.signin(this, this.login.email, this.login.password)
           }
         }
     }

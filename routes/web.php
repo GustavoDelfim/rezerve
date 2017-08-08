@@ -16,6 +16,7 @@ Route::get('/', function () {
 })->name('index');
 
 
+
 Route::get('/painel/', function () {
     return view('painel/welcome');
 })->name('painel');
