@@ -1,7 +1,3 @@
-
-// Pages
-@import "main";
-
-body {
-  //background: #eee;
-}
+@import './node_modules/materialize-css/sass/materialize';
+@import 'variables';
+@import 'main';
