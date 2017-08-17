@@ -21,7 +21,7 @@ class VerifyCsrfToken extends BaseVerifier
     public function handle($request, Closure $next)
     {
         try{
-            $user = JWTAuth::toUser($request->input('token'));
+            $user = JWTAuth::parseToken()->authenticate();
         }catch (JWTException $e) {
             if($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException) {
                 return response()->json(['token_expired'], $e->getStatusCode());
@@ -33,5 +33,5 @@ class VerifyCsrfToken extends BaseVerifier
         }
        return $next($request);
     }
-    
+
 }
