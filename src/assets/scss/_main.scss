@@ -2,6 +2,7 @@ body {
   margin-bottom: -22px;
 }
 
+.m0,
 .margin-0 {
   margin: 0 !important;
 }
@@ -11,4 +12,11 @@ body {
 
 .material-icons {
   color: #444;
+}
+
+.input-field label.custom {
+  width: 100%
+}
+.input-field label::after {
+  margin-top: 8px
 }
